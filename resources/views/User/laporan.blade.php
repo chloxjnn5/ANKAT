@@ -77,10 +77,9 @@
 </section>
 {{-- Section Card --}}
 <div class="container" style="margin-top: 13rem;">
-
         <div class="row justify-content-center">
-        <div class="col">
-            <div class="content content-top shadow justify-content-center">
+        <div class="col-lg-3 col-md-12 col-sm-12 col-12 col">
+            <div class="content content-top shadow">
                 <img src="{{ asset('assets/img/user.png') }}" alt="user profile" class="photo" style="width: 3rem; height: 3rem;">
                 <div class="ml-5">
                     <h5><a style="color: #000" href="#">{{ Auth::guard('masyarakat')->user()->nama }}</a></h5>
@@ -88,43 +87,46 @@
                 </div>
             </div>
         </div>
-        <div class="col">
-            <div class="content content-top shadow justify-content-center">
-                    {{-- <img src="{{ asset('assets/img/user.png') }}" alt="user profile" class="photo" style="width: 4rem; height: 4rem; margin: 0 5rem;">
-                    <div class="self-align ml-5 mt-2">
-                        <h5><a style="color: #000" href="#">{{ Auth::guard('masyarakat')->user()->nama }}</a></h5>
-                        <p class="text-dark">{{ Auth::guard('masyarakat')->user()->username }}</p>
-                    </div> --}}
-                    <div class="row text-center">
-                        <div class="col">
-                            <p class="italic mb-0">Terverifikasi</p>
-                            <div class="text-center">
-                                {{ $hitung[0] }}
+        <br><br><br><br><br><br><br><br>
+        <div class="row justify-content-center">
+            <div class="col-lg-13 col-md-12 col">
+                <div class="content content-top shadow">
+                        {{-- <img src="{{ asset('assets/img/user.png') }}" alt="user profile" class="photo" style="width: 4rem; height: 4rem; margin: 0 5rem;">
+                        <div class="self-align ml-5 mt-2">
+                            <h5><a style="color: #000" href="#">{{ Auth::guard('masyarakat')->user()->nama }}</a></h5>
+                            <p class="text-dark">{{ Auth::guard('masyarakat')->user()->username }}</p>
+                        </div> --}}
+                        <div class="row text-center">
+                            <div class="col">
+                                <p class="italic mb-0">Terverifikasi</p>
+                                <div class="text-center">
+                                    {{ $hitung[0] }}
+                                </div>
                             </div>
-                        </div>
-                        <div class="col">
-                            <p class="italic mb-0">Pending</p>
-                            <div class="text-center">
-                                {{ $hitung[1] }}
+                            <div class="col">
+                                <p class="italic mb-0">Pending</p>
+                                <div class="text-center">
+                                    {{ $hitung[1] }}
+                                </div>
                             </div>
-                        </div>
-                        <div class="col">
-                            <p class="italic mb-0">Proses</p>
-                            <div class="text-center">
-                                {{ $hitung[2] }}
+                            <div class="col">
+                                <p class="italic mb-0">Proses</p>
+                                <div class="text-center">
+                                    {{ $hitung[2] }}
+                                </div>
                             </div>
-                        </div>
-                        <div class="col">
-                            <p class="italic mb-0">Selesai</p>
-                            <div class="text-center">
-                                {{ $hitung[3] }}
+                            <div class="col">
+                                <p class="italic mb-0">Selesai</p>
+                                <div class="text-center">
+                                    {{ $hitung[3] }}
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
+            </div>
         </div>
     </div>
-    <br><br><br><br><br><br><br><br><br>
+
     <div class="row justify-content-center">
         <div class="col-lg-8 col-md-12 col-sm-12 col-12 col">
             <div class="content content-top shadow">
@@ -166,7 +168,7 @@
 
     </div>
 
-    <div class="row justify-content-center mt-5">
+    <div class="row justify-content-center" style="margin-top: 5rem; margin-bottom: 5rem;">
         <div class="col-lg-3">
             <a class="d-inline tab {{ $siapa != 'me' ? 'tab-active' : ''}} mr-4" href="{{ route('pekat.laporan') }}">
                 Semua
@@ -184,11 +186,11 @@
                 <th>Tanggal</th>
                 <th>Nama</th>
                 <th>Isi Laporan</th>
-                <th>Foto</th>
                 <th>Tanggal Tanggapan</th>
                 <th>Tanggapan</th>
                 <th>Status</th>
                 <th>Verifikasi</th>
+                <th>Foto</th>
             </tr>
         </thead>
         <tbody>
@@ -198,16 +200,9 @@
                 <td>{{ $v->tgl_pengaduan }}</td>
                 <td>{{ $v->user->nama}}</td>
                 <td>{{ $v->isi_laporan }}</td>
-
-                <td>
-                    @if ($v->foto != null)
-                        <img src="{{ asset('/storage/' . $v->foto) }}" alt="{{ 'Gambar '.$v->judul_laporan }}" class="img">
-                    @endif
-
-                </td>
                 <td>
                 @if ($v->tanggapan != null)
-                        <p class="mt-3 mb-1 tanggapan-laporan">{{ $v->tanggapan->tgl_tanggapan }}</p>
+                        <p class="tanggapan-laporan">{{ $v->tanggapan->tgl_tanggapan }}</p>
                     @endif
                 </td>
                 <td>
@@ -232,17 +227,30 @@
                         Sudah diverifikasi
                     @endif
                 </td>
+                <td>
+                    @if ($v->foto != null)
+                        <img src="{{ asset('/storage/' . $v->foto) }}" alt="{{ 'Gambar '.$v->judul_laporan }}" class="img">
+                    @endif
+
+                </td>
             </tr>
             @endforeach
         </tbody>
     </table>
     </div>
 </div>
+{{-- Footer --}}
+{{-- <div class="mt-5 mb-0">
+    <hr>
+    <div class="text-center">
+        <p class="text-secondary">© Copyright ANKAT </p>
+    </div>
+</div> --}}
 @endsection
 
 @section('js')
 @if (Session::has('pesan'))
-<script>
+<script>`
     $('#loginModal').modal('show');
 
 </script>

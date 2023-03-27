@@ -66,13 +66,21 @@
                             @enderror
                         </div>
                         <div class="form-group">
+                            <textarea name="alamat" placeholder="Alamat" class="form-control @error('alamat') is-invalid @enderror" rows="4"></textarea>
+                            @error('alamat')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
+                        </div>
+                        {{-- <div class="form-group">
                             <input type="text" value="{{ old('alamat') }}" name="alamat" placeholder="Alamat" class="form-control @error('alamat') is-invalid @enderror">
                             @error('alamat')
                                 <div class="invalid-feedback">
                                     {{ $message }}
                                 </div>
                             @enderror
-                        </div>
+                        </div> --}}
                         <div class="form-group">
                             <input type="email" value="{{ old('email') }}" name="email" placeholder="Email" class="form-control @error('email') is-invalid @enderror">
                             @error('email')
