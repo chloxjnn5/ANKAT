@@ -78,7 +78,7 @@
 {{-- Section Card --}}
 <div class="container" style="margin-top: 13rem;">
         <div class="row justify-content-center">
-        <div class="col-lg-3 col-md-12 col-sm-12 col-12 col">
+        <div class="col-lg-4 col-md-12 col-sm-12 col-12 col">
             <div class="content content-top shadow">
                 <img src="{{ asset('assets/img/user.png') }}" alt="user profile" class="photo" style="width: 3rem; height: 3rem;">
                 <div class="ml-5">
@@ -97,12 +97,12 @@
                             <p class="text-dark">{{ Auth::guard('masyarakat')->user()->username }}</p>
                         </div> --}}
                         <div class="row text-center">
-                            <div class="col">
+                            {{-- <div class="col">
                                 <p class="italic mb-0">Terverifikasi</p>
                                 <div class="text-center">
                                     {{ $hitung[0] }}
                                 </div>
-                            </div>
+                            </div> --}}
                             <div class="col">
                                 <p class="italic mb-0">Pending</p>
                                 <div class="text-center">
@@ -168,8 +168,8 @@
 
     </div>
 
-    <div class="row justify-content-center" style="margin-top: 5rem; margin-bottom: 5rem;">
-        <div class="col-lg-3">
+    <div class="row justify-content-center text-align-center" style="margin-top: 5rem; margin-bottom: 5rem;">
+        <div class="col-lg-3 mb-2" style="text-align-center">
             <a class="d-inline tab {{ $siapa != 'me' ? 'tab-active' : ''}} mr-4" href="{{ route('pekat.laporan') }}">
                 Semua
             </a>
@@ -182,15 +182,15 @@
         <table id="pengaduanTable" class="table">
         <thead>
             <tr>
-                <th>No</th>
-                <th>Tanggal</th>
-                <th>Nama</th>
-                <th>Isi Laporan</th>
-                <th>Tanggal Tanggapan</th>
-                <th>Tanggapan</th>
-                <th>Status</th>
-                <th>Verifikasi</th>
-                <th>Foto</th>
+                <th style="vertical-align: middle;">No</th>
+                <th style="vertical-align: middle;">Tanggal</th>
+                <th style="vertical-align: middle;">Nama</th>
+                <th style="vertical-align: middle;">Isi Laporan</th>
+                <th style="vertical-align: middle;">Tanggal Tanggapan</th>
+                <th style="vertical-align: middle;">Tanggapan</th>
+                <th style="vertical-align: middle;">Status</th>
+                <th style="vertical-align: middle;">Verifikasi</th>
+                <th style="vertical-align: middle;">Foto</th>
             </tr>
         </thead>
         <tbody>

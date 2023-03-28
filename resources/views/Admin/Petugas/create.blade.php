@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
-@section('title', 'Form Tambah Petugas')
-    
+@section('title', 'Tambah Petugas')
+
 @section('css')
     <style>
         .text-primary:hover {
@@ -19,9 +19,9 @@
 @endsection
 
 @section('header')
-    <a href="{{ route('petugas.index') }}" class="text-primary">Data Petugas</a>
+    <a href="{{ route('petugas.index') }}" class="text-dark">Keluar</a>
     <a href="#" class="text-grey">/</a>
-    <a href="#" class="text-grey">Form Tambah Petugas</a>
+    <a href="#" class="text-grey">Tambah</a>
 @endsection
 
 @section('content')
@@ -29,7 +29,7 @@
         <div class="col-lg-6 col-12">
             <div class="card">
                 <div class="card-header">
-                    Form Tambah Petugas
+                    Data Petugas
                 </div>
                 <div class="card-body">
                     <form action="{{ route('petugas.store') }}" method="POST">

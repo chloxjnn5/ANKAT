@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title', 'Detail Pengaduan')
-    
+
 @section('css')
     <style>
         .text-primary:hover {
@@ -9,16 +9,16 @@
         }
 
         .text-grey {
-            color: #2f3f65;
+            color: #222;
         }
 
         .text-grey:hover {
-            color: #2f3f65;
+            color: #222;
         }
 
         .btn-purple {
-            background: #6a70fc;
-            border: 1px solid #6a70fc;
+            background: #222;
+            border: 1px solid #222;
             color: #fff;
             width: 100%;
         }
@@ -26,7 +26,7 @@
 @endsection
 
 @section('header')
-    <a href="{{ route('pengaduan.index') }}" class="text-primary">Data Pengaduan</a>
+    <a href="{{ route('pengaduan.index') }}" class="text-dark">Keluar</a>
     <a href="#" class="text-grey">/</a>
     <a href="#" class="text-grey">Detail Pengaduan</a>
 @endsection
@@ -133,7 +133,7 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="tanggapan">Tanggapana</label>
+                            <label for="tanggapan">Tanggapan</label>
                             <textarea name="tanggapan" id="tanggapan" rows="4" class="form-control" placeholder="Belum ada tanggapan">{{ $tanggapan->tanggapan ?? '' }}</textarea>
                         </div>
                         <button type="submit" class="btn btn-purple">KIRIM</button>

@@ -149,7 +149,7 @@
             </div>
         </div>
         <div class="col bg-navy rounded d-flex align-items-center" style="gap: 4.5rem">
-            <i class='bx bxs-balloon bx-md text-warning ml-2'></i>
+            <i class='bx bx-loader bx-md text-warning ml-2'></i>
             <div>
                 <div class="text-center medium text-white">
                 <p class="italic mb-0 medium text-white">Proses</p>
@@ -158,7 +158,7 @@
             </div>
         </div>
         <div class="col bg-navy rounded d-flex align-items-center" style="gap: 4.5rem">
-            <i class='bx bxs-balloon bx-md text-success ml-2'></i>
+            <i class='bx bx-check-circle bx-md text-success ml-2'></i>
             <div>
                 <p class="italic mb-0 medium text-white">Selesai</p>
                 <div class="text-center medium text-white">

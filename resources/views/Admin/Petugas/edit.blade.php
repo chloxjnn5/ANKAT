@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('title', 'Form Edit Petugas')
+@section('title', 'Edit Petugas')
 
 @section('css')
     <style>

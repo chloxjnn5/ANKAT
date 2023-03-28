@@ -55,6 +55,15 @@ hr {
     margin-top: 9px;
 }
 
+tr th {
+    text-align: center;
+    vertical-align: middle;
+}
+
+td {
+    text-align: center;
+}
+
 .laporan-top {
     padding-top: 16px;
 }

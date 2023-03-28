@@ -12,12 +12,15 @@
     <style>
         table, th, td {
             border: 1px solid black;
-            /* border-collapse: collapse; */
+            border-collapse: collapse;
             border-spacing: 0;
+            text-align: center;
+            padding: 10px 30px;
         }
         img {
             width: 70;
             position: absolute;
+            margin-left: 20px
         }
     </style>
 </head>
@@ -28,18 +31,19 @@
         <h5>Laporan Pengaduan Masyarakat Desa Cibeureum</h5>
         <p>Jl. Kapten Harun Kabir No. 724, Desa Cibeureum, Kecamatan Cisarua, Kabupaten Bogor, Jawa Barat 16750</p>
     </div>
-    <br>
-    <div>
-        <table class="table" style>
+    <hr>
+    <div class="text-center">
+        <p><b>PERIODE : {{ $from }} - {{ $to }}</b></p>
+        <table>
             <thead>
                 <tr>
                     <th>No</th>
-                    <th>Tanggal</th>
-                    <th>Nama Pengadu</th>
+                    <th>NIK</th>
+                    <th>Nama</th>
+                    <th>Tanggal Pengaduan</th>
                     <th>Isi Laporan</th>
+                    <th>Tanggapan</th>
                     <th>Tanggal Tanggapan</th>
-                    <th>Isi Tanggapan</th>
-                    <th>Nama Petugas</th>
                     <th>Status</th>
                 </tr>
             </thead>
@@ -47,27 +51,28 @@
                 @foreach ($pengaduan as $k => $v)
                     <tr>
                         <td>{{ $k += 1 }}</td>
-                        <td>{{ $v->tgl_pengaduan->format('d-M-Y') }}</td>
+                        <td>{{ $v->user->nik }}</td>
                         <td>{{ $v->user->nama }}</td>
+                        <td>{{ $v->tgl_pengaduan->format('d-M-Y') }}</td>
                         <td>{{ $v->isi_laporan }}</td>
-                        <!-- tanggal tanggapan -->
-                        @if ($v->tanggapan != null)
-                            <td>{{ $v->tanggapan->tgl_tanggapan }}</td>
-                        @else
-                            <td>-</td>
-                        @endif
                         <!-- isi tanggapan -->
                         @if ($v->tanggapan != null)
                             <td>{{ $v->tanggapan->tanggapan}}</td>
                         @else
                             <td>-</td>
                         @endif
-                        <!-- nama petugas -->
+                        <!-- tanggal tanggapan -->
+                        @if ($v->tanggapan != null)
+                            <td>{{ $v->tanggapan->tgl_tanggapan->format('d-M-Y') }}</td>
+                        @else
+                            <td>-</td>
+                        @endif
+                        {{-- <!-- nama petugas -->
                         @if ($v->tanggapan !=null)
                             <td>{{ $v->tanggapan->petugas->nama_petugas }}</td>
                         @else
                             <td>-</td>
-                        @endif
+                        @endif --}}
                         <td>{{ $v->status == '0' ? 'Pending' : ucwords($v->status) }}</td>
                     </tr>
                 @endforeach

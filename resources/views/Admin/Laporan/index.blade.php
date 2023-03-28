@@ -1,9 +1,9 @@
 @extends('layouts.admin')
 
-@section('title', 'Halaman Laporan')
-    
+@section('title', 'Laporan')
+
 @section('header', 'Laporan Pengaduan')
-    
+
 @section('content')
     <div class="row">
         <div class="col-lg-4 col-12">
@@ -40,20 +40,20 @@
                         <table class="table">
                             <thead>
                                 <tr>
-                                    <th>No</th>
-                                    <th>Tanggal</th>
-                                    <th>Nama Pengadu</th>
-                                    <th>Isi Laporan</th>
-                                    <th>Status</th>
-                                    <th>Tanggapan</th>
+                                    <th style="text-align: center;">No</th>
+                                    <th style="text-align: center;">Nama</th>
+                                    <th style="text-align: center;">Tanggal</th>
+                                    <th style="text-align: center;">Isi Laporan</th>
+                                    <th style="text-align: center;">Status</th>
+                                    <th style="text-align: center;">Tanggapan</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach ($pengaduan as $k => $v)
                                     <tr>
                                         <td>{{ $k += 1 }}</td>
-                                        <td>{{ $v->tgl_pengaduan }}</td>
                                         <td>{{ $v->user->nama }}</td>
+                                        <td>{{ $v->tgl_pengaduan }}</td>
                                         <td>{{ $v->isi_laporan }}</td>
                                         <td>
                                             @if ($v->status == '0')

@@ -66,7 +66,7 @@
                             @enderror
                         </div>
                         <div class="form-group">
-                            <textarea name="alamat" placeholder="Alamat" class="form-control @error('alamat') is-invalid @enderror" rows="4"></textarea>
+                            <textarea name="alamat" placeholder="Alamat" class="form-control @error('alamat') is-invalid @enderror" rows="3"></textarea>
                             @error('alamat')
                             <div class="invalid-feedback">
                                 {{ $message }}

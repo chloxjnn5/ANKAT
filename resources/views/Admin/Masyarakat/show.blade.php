@@ -19,7 +19,7 @@
 @endsection
 
 @section('header')
-    <a href="{{ route('masyarakat.index') }}" class="text-primary">Data Masyarakat</a>
+    <a href="{{ route('masyarakat.index') }}" class="text-dark">Keluar</a>
     <a href="#" class="text-grey">/</a>
     <a href="#" class="text-grey">Detail Masyarakat</a>
 @endsection
